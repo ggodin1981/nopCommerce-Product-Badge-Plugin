@@ -1,0 +1,1 @@
+# nopCommerce-Product-Badge-Plugin
