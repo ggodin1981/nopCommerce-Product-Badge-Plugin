@@ -1,0 +1,52 @@
+@model Nop.Plugin.Misc.ProductBadge.Models.ConfigurationModel
+
+@{
+    Layout = "_ConfigurePlugin";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Product Badge Plugin Settings</h3>
+    </div>
+    <div class="card-body">
+        <form asp-controller="ProductBadgeAdmin" asp-action="Configure" method="post">
+            <div class="form-group">
+                <label asp-for="Enabled"></label>
+                <input asp-for="Enabled" type="checkbox" class="form-check-input" />
+            </div>
+            <div class="form-group">
+                <label asp-for="DefaultBadgeColor"></label>
+                <input asp-for="DefaultBadgeColor" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Save</button>
+        </form>
+
+        <hr />
+        <h4>Existing Badges</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Badge Text</th>
+                    <th>Badge Color</th>
+                    <th>Active</th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var badge in Model.Badges)
+            {
+                <tr>
+                    <td>@badge.ProductId</td>
+                    <td>@badge.BadgeText</td>
+                    <td>
+                        <span style="background-color:@badge.BadgeColor;padding:2px 8px;color:#fff;">
+                            @badge.BadgeColor
+                        </span>
+                    </td>
+                    <td>@badge.IsActive</td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+</div>

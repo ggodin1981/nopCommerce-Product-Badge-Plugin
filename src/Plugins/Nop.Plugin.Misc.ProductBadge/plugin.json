@@ -1,0 +1,12 @@
+{
+  "Group": "Misc",
+  "FriendlyName": "Product Badge Plugin",
+  "SystemName": "Misc.ProductBadge",
+  "Version": "1.00",
+  "SupportedVersions": [
+    "4.90"
+  ],
+  "Author": "Sample Developer",
+  "DisplayOrder": 1,
+  "FileName": "Nop.Plugin.Misc.ProductBadge.dll"
+}
